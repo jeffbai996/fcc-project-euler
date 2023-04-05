@@ -5,6 +5,22 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed n, find the sum of the even-valued terms.
 
 function fiboEvenSum(n) {
-
-  return true;
+  // declare variables to store
+  let previous = 1;
+  let current = 2;
+  let sum = 0;
+  // loop through fibonacci sequence
+  while (current <= n) {
+    // check if current is even
+    if (current % 2 === 0) {
+      // add to sum
+      sum += current;
+    }
+    // update previous and current
+    let next = current;
+    current += previous;
+    previous = next;
+  }
+  // return sum
+  return sum;
 }
