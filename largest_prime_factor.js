@@ -4,8 +4,17 @@
 // What is the largest prime factor of the given number?
 
 function largestPrimeFactor(number) {
-
-  return true;
+  let primeFactors = [];
+  let i = 2;
+  while (i <= number) {
+    if (number % i === 0) {
+      primeFactors.push(i);
+      number /= i;
+    } else {
+      i++;
+    }
+  }
+  return primeFactors[primeFactors.length - 1];
 }
 
 largestPrimeFactor(13195);
