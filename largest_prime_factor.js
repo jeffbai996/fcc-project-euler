@@ -16,6 +16,16 @@ function isPrime(num) {
 }
 
 function largestPrimeFactor(number) {
+  let largestFactor = 1;
+
+  for (let i = 2; i <= number; i++) {
+    if (number % i === 0 && isPrime(i)) {
+      largestFactor = i;
+      number = number / i;
+      i = 1;
+    }
+  }
+  return largestFactor;
 }
 
 largestPrimeFactor(13195);
