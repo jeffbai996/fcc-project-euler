@@ -3,9 +3,19 @@
 
 // What is the largest prime factor of the given number?
 
-function largestPrimeFactor(number) {
-  // define an array to store the prime factors
+function isPrime(num) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
+function largestPrimeFactor(number) {
 }
 
 largestPrimeFactor(13195);
