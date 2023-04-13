@@ -3,9 +3,25 @@
 
 // Find the largest palindrome made from the product of two n-digit numbers.
 
-function largestPalindromeProduct(n) {
+function isPalindrome(number) {
+  const strNumber = number.toString();
+  const reversedStrNumber = strNumber.split('').reverse().join('');
+  return strNumber === reversedStrNumber;
+}
 
-  return true;
+function largestPalindromeProduct(n) {
+  const max = Math.pow(10, n) - 1;
+  const min = Math.pow(10, n - 1);
+  let largestPalindrome = 0;
+  for (let i = max; i >= min; i--) {
+    for (let j = max; j >= min; j--) {
+      const product = i * j;
+      if (isPalindrome(product) && product > largestPalindrome) {
+        largestPalindrome = product;
+      }
+    }
+  }
+  return largestPalindrome;
 }
 
 largestPalindromeProduct(3);
