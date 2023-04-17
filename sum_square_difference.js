@@ -13,8 +13,20 @@
 // Find the difference between the sum of the squares of the first n natural numbers and the square of the sum.
 
 function sumSquareDifference(n) {
-
-  return true;
+  // calculate the sum of the squares of the first n natural numbers
+  let sumOfSquares = 0;
+  for (let i = 1; i <= n; i++) {
+    sumOfSquares += i * i;
+  }
+  // calculate the square of the sum of the first n natural numbers
+  let squareOfSum = 0;
+  for (let i = 1; i <= n; i++) {
+    squareOfSum += i;
+  }
+  squareOfSum *= squareOfSum;
+  // return the difference
+  return squareOfSum - sumOfSquares;
 }
+
 
 sumSquareDifference(100);
