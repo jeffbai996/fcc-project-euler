@@ -14,6 +14,7 @@ function isPrime(num) {
   if (num % 2 === 0) {
     return false;
   }
+  // check up to the square root of the number
   const sqrt = Math.sqrt(num);
   for (let i = 3; i <= sqrt; i += 2) {
     if (num % i === 0) {
@@ -23,10 +24,11 @@ function isPrime(num) {
   return true;
 }
 
-
+// function to find the nth prime number
 function nthPrime(n) {
   let count = 0;
   let i = 1;
+  // loop until the nth prime number is found
   while (count < n) {
     i++;
     if (isPrime(i)) {
